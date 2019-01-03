@@ -10,7 +10,7 @@ import net.minecraft.client.gui.ScaledResolution;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid = "mainmenuscale", name = "Main Menu Scale", clientSideOnly = true)
+@Mod(modid = "mainmenuscale", name = "Main Menu Scale", clientSideOnly = true, dependencies = "required-after:reborncore")
 public class MainMenuScale {
 
 	@Mod.EventHandler
@@ -36,7 +36,7 @@ public class MainMenuScale {
 		}
 		isMenuOpen = true;
 		guiScale = Minecraft.getMinecraft().gameSettings.guiScale;
-		Minecraft.getMinecraft().gameSettings.guiScale = 0;
+		Minecraft.getMinecraft().gameSettings.guiScale = Config.GUI_SCALE;
 		updateRes();
 	}
 
